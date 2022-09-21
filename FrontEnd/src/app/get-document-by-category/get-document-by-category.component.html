@@ -1,0 +1,57 @@
+
+<app-main-nav>
+        <h1>Show Document By Category</h1>
+       
+        <hr>
+        <div class="form-control">
+                <form [formGroup] ="categoryForm" (ngSubmit)="getDocumentByCategory()">
+                        <div class="col-75">
+                                <select id="category" class="drop" name="category" formControlName="category" required>
+                                    <option value="Docx">Docx</option>
+                                    <option value="PPT">PPT</option>
+                                    <option value="XLS">XLS</option>
+                                    <option value="CVS">CVS</option>
+                                    <option value="PDF">PDF</option>
+                                    <option value="JPG">JPG</option>         
+                                    <option value="MP3">MP3</option>
+                                    <option value="MP4">MP4</option>
+                          
+                                </select>
+                        </div>
+                        <br>
+                        <input class="submit" type="submit" value="search">
+                        
+                          
+                </form>
+        </div>
+
+        <table id="document">
+                <tr>
+                    <th *ngFor = "let column of headers">
+                        {{column}}
+                    </th>
+                </tr>
+        
+                <tr *ngFor = "let doc of documentList">
+                    <td>
+                        {{doc.documentId}}
+                    </td>
+                    <td>
+                        {{doc.documentName}}
+                    </td>
+                    <td>
+                        {{doc.documentDescription}}
+                    </td>
+                    <td>
+                        {{doc.documentCategory}}
+                    </td>
+                    <td>
+                        {{doc.units}}
+                    </td>       
+        
+                </tr>
+        
+        
+            </table>
+        
+</app-main-nav>

@@ -1,0 +1,110 @@
+<app-main-nav>
+    <h1>Your documents</h1>
+    
+<hr>
+    <table id="document">
+        <tr>
+            <th (click)="sort('id')">
+                ID&nbsp;<span class="material-icons white">
+                    unfold_more
+                    </span>
+            </th>
+
+            <th (click)="sort('documentName')">
+                document Name&nbsp;<span class="material-icons white">
+                    unfold_more
+                    </span>
+            </th>
+            <th (click)="sort('documentDescription')">
+                document Description&nbsp;<span class="material-icons white">
+                    unfold_more
+                    </span>
+            </th>
+            <th (click)="sort('dateUploeded')">
+                Date Uploaded&nbsp;<span class="material-icons white">
+                    unfold_more
+                    </span>
+            </th>
+            <th (click)="sort('dateUploeded')">
+                Last Modification&nbsp;<span class="material-icons white">
+                    unfold_more
+                    </span>
+            </th>
+            <th (click)="sort('Category')">
+                Category&nbsp;<span class="material-icons white">
+                    unfold_more
+                    </span>
+            </th>
+            <th (click)="sort('units')">
+                Units&nbsp;<span class="material-icons white">
+                    unfold_more
+                    </span>
+            </th>
+           
+            
+            <th>
+                Edit
+            </th>
+            <th>
+                Delete
+            </th>
+            <th>
+                View
+            </th>
+            
+        </tr>
+
+        <tr *ngFor = "let document of documentList | orderBy: key:reverse">
+            <td>
+                {{document.documentId}}
+            </td>
+            <td>
+                {{document.documentName}}
+            </td>
+            <td>
+                {{document.documentDescription}}
+            </td>
+            <td>
+                {{document.dateUpload}}
+            </td>
+            <td>
+                {{document.lastModification}}
+
+            </td>
+            <td>
+                {{document.documentCategory}}
+               
+            </td>
+
+            
+            <td>
+                {{document.units}}
+            </td>       
+            
+            <td>
+                <span class="material-icons edit" (click)="updateDocument(document)">
+                        border_color
+                    </span>
+            </td>    
+
+            <td>
+                <span class="material-icons delete" (click)="deleteDocument(document.documentId)">
+                    delete
+                    </span>
+                
+            </td>
+            <td>
+                <span class="material-icons view" (click)="viewDocument()" >
+                    visibility
+                    </span>
+                
+            </td>        
+
+
+        </tr>
+
+
+    </table>
+    
+    </app-main-nav>
+   

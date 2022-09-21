@@ -1,0 +1,100 @@
+<app-main-nav>
+    <h1>Trash </h1>
+    
+<hr>
+    <table id="document">
+        <tr>
+            <th >
+                ID&nbsp;<span class="material-icons white">
+                    unfold_more
+                    </span>
+            </th>
+
+            <th >
+                document Name&nbsp;<span class="material-icons white">
+                    unfold_more
+                    </span>
+            </th>
+            <th >
+                document Description&nbsp;<span class="material-icons white">
+                    unfold_more
+                    </span>
+            </th>
+            <th >
+                Date Uploaded&nbsp;<span class="material-icons white">
+                    unfold_more
+                    </span>
+            </th>
+            <th >
+                Last Modification&nbsp;<span class="material-icons white">
+                    unfold_more
+                    </span>
+            </th>
+            <th >
+                Category&nbsp;<span class="material-icons white">
+                    unfold_more
+                    </span>
+            </th>
+            <th >
+                Units&nbsp;<span class="material-icons white">
+                    unfold_more
+                    </span>
+            </th>
+           
+            
+            <th>
+                Restore&nbsp;<span class="material-icons white">
+                    unfold_more
+                    </span>
+
+            </th>
+            
+        </tr>
+
+        <tr  *ngFor = "let document of documentList | orderBy: key:reverse">
+            <td>
+                {{document.documentId}}
+
+            </td>
+            <td>
+                {{document.documentName}}
+
+            </td>
+            <td>
+                {{document.documentDescription}}
+
+            </td>
+            <td>
+                {{document.dateUpload}}
+
+            </td>
+            <td>
+                {{document.lastModification}}
+
+
+            </td>
+            <td>
+                {{document.documentCategory}}
+
+               
+            </td>
+
+            
+            <td>
+                {{document.units}}
+
+            </td>       
+            
+            <td>
+                <button (click)=" restoreDocument(document)">test</button>
+                
+            </td>        
+
+
+        </tr>
+
+
+    </table>
+    
+    </app-main-nav>
+   

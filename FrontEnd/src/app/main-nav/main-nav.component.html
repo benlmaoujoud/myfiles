@@ -1,0 +1,60 @@
+<mat-toolbar>
+  <span>Documents Manager</span>
+  <span class="example-spacer"></span>
+      
+
+  <span class="material-icons home myDIV" style="float: right;" routerLink="/login" (click)="logout()"> logout</span>
+  <div class="hide" style="float: right;" routerLink="/login" (click)="logout()"><b>Logout</b></div>
+  
+</mat-toolbar>
+
+
+<mat-sidenav-container class="sidenav-container">
+    <mat-sidenav #drawer class="sidenav" mode="side" opened>
+
+      <img class="avatar mat-elevation-z8" src="./assets/aaa.png" />
+
+<h4 class="name">User Name</h4>
+<p class="designation">Student</p>
+
+<mat-divider></mat-divider>
+      <button mat-button class="menu-button" routerLink="/getAllDocuments">
+        <mat-icon>web_stories</mat-icon>
+        <span>All Docs  </span>
+    </button>
+    <button mat-button class="menu-button" routerLink="/documentByCategory"  >
+        <mat-icon>stream</mat-icon>
+        <span>By Category</span>
+    </button>
+    <button mat-button class="menu-button" routerLink="/add">
+        <mat-icon>add_circle_outline</mat-icon>
+        <span>Add docs</span>
+    </button>
+  
+
+    <button mat-button class="menu-button" routerLink="/trash">
+      <mat-icon>restore_from_trash</mat-icon>
+      <span>Trash</span>
+  </button>
+
+    <mat-divider></mat-divider>
+
+    <button mat-button class="menu-button" routerLink="/logout">
+      <mat-icon>logout</mat-icon>
+      <span>Log out</span>
+  </button>
+
+
+    </mat-sidenav>
+    <mat-sidenav-content>
+
+          <ng-content></ng-content>
+
+          
+
+
+    </mat-sidenav-content>
+    
+    
+</mat-sidenav-container>
+
